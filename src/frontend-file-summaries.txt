@@ -1,0 +1,16 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the Softevia landing page as the primary experience.",
+  "frontend/src/index.css": "Global styles with OKLCH color system customized for blue/purple gradient theme, smooth scrolling, and gradient utility classes for the enterprise SaaS aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Inter font family, custom blue/purple gradient colors, glow shadows, and fade-in animations for the modern B2B SaaS design.",
+  "frontend/index.html": "HTML entry point with SEO-optimized title and meta description targeting \"Market Research Technology in Europe\" keyword, plus Inter font preload.",
+  "frontend/src/pages/SofteviaLandingPage.tsx": "Complete single-page landing layout with all required sections (Hero, Evolution, About, Capabilities, Why Choose, Industries, How It Works, Final CTA) and lead capture dialog integration.",
+  "frontend/src/components/marketing/Header.tsx": "Responsive header with Softevia branding, smooth-scroll navigation to page sections, and persistent CTA button that opens the lead capture dialog.",
+  "frontend/src/components/marketing/Footer.tsx": "B2B SaaS footer with brand positioning, quick navigation links, CTA, and attribution to caffeine.ai with love icon.",
+  "frontend/src/components/marketing/CapabilitiesGrid.tsx": "Six-item capabilities grid component displaying AI-Powered Business Insights, Customer Insights Analytics, Competitor Benchmarking, Predictive Analytics, Business Intelligence, and Digital Market Intelligence Platform with icons and descriptions.",
+  "frontend/src/components/marketing/IndustriesGrid.tsx": "Industries grid component displaying six European industry sectors (Technology & SaaS, Financial Services, Retail & E-commerce, Healthcare & Pharmaceuticals, Manufacturing, B2B Professional Services) with icons and descriptions.",
+  "frontend/src/components/marketing/HowItWorksFlow.tsx": "Step-by-step visual flow component showing the five-stage technology process (Data Aggregation, AI Processing, Predictive Modeling, Interactive Dashboards, Strategic Insights) with numbered icons and connecting line.",
+  "frontend/src/components/leads/LeadCaptureDialog.tsx": "Modal dialog wrapper for the lead capture form with backdrop, close button, and dynamic header text based on intent (demo vs expert).",
+  "frontend/src/components/leads/LeadCaptureForm.tsx": "Lead capture form with intent selector, required fields (name, email, company), optional message, inline validation, loading states, and success confirmation message.",
+  "frontend/src/hooks/useSubmitLead.ts": "React hook that submits lead data to the backend via the actor, manages submission status (idle/submitting/success/error), and returns error messages.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file reserved for future React Query hooks that interact with the backend."
+}

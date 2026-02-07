@@ -1,0 +1,236 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T18:06:43.614Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 7,
+    "implemented": 6,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create a single-page, modern, high-conversion B2B SaaS landing page for “Softevia” with a clean, professional enterprise look using blue and purple gradient accents, plus AI/analytics-themed visuals.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/components/marketing/Section.tsx",
+          "frontend/tailwind.config.js",
+          "frontend/src/index.css",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/tailwind.config.js",
+          "frontend/src/index.css",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Implement the exact page structure and section content specified by the user, with user-facing text in English and with the H1 exactly: “Market Research Technology in Europe”.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+          "frontend/src/components/marketing/HowItWorksFlow.tsx",
+          "frontend/src/components/marketing/IndustriesGrid.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+          "frontend/src/components/marketing/HowItWorksFlow.tsx",
+          "frontend/src/components/marketing/IndustriesGrid.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Add conversion-focused CTAs: wire the “Request a Demo” and “Speak with an Expert” CTAs to open a modal (or dedicated section) with a lead capture form, validate inputs, and show a clear success state after submission.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/leads/LeadCaptureDialog.tsx",
+          "frontend/src/components/leads/LeadCaptureForm.tsx",
+          "frontend/src/hooks/useSubmitLead.ts",
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/hooks/useActor.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/leads/LeadCaptureDialog.tsx",
+          "frontend/src/components/leads/LeadCaptureForm.tsx",
+          "frontend/src/hooks/useSubmitLead.ts",
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/hooks/useActor.ts"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Implement backend lead storage in the single Motoko actor: store lead submissions (timestamp, intent, name, email, company, message) and expose a method for the frontend to submit leads.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Optimize the landing page for on-page SEO targeting the exact keyword “Market Research Technology in Europe” by adding appropriate document title, meta description, and visible keyword usage across headings/body while keeping language natural; also include the provided related keywords across the page content.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html",
+          "frontend/src/pages/SofteviaLandingPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/index.html",
+          "frontend/src/pages/SofteviaLandingPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Add a polished navigation/header and footer suitable for a B2B SaaS landing page, with smooth scroll to sections and persistent access to primary CTA(s).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/marketing/Header.tsx",
+          "frontend/src/components/marketing/Footer.tsx",
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/marketing/Header.tsx",
+          "frontend/src/components/marketing/Footer.tsx",
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add and render required static image assets (illustrations and dashboard mockups) under frontend/public/assets/generated and integrate them into relevant sections (Hero and/or How it Works / Solutions) with proper alt text.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/softevia-hero-illustration.dim_1400x900.png",
+          "frontend/public/assets/generated/softevia-dashboard-mockup.dim_1600x1000.png",
+          "frontend/public/assets/generated/softevia-capability-icons.dim_512x512.png",
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/components/marketing/CapabilitiesGrid.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/softevia-hero-illustration.dim_1400x900.png",
+          "frontend/public/assets/generated/softevia-dashboard-mockup.dim_1600x1000.png",
+          "frontend/public/assets/generated/softevia-capability-icons.dim_512x512.png",
+          "frontend/src/pages/SofteviaLandingPage.tsx",
+          "frontend/src/components/marketing/CapabilitiesGrid.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/softevia-capability-icons.dim_512x512.png",
+    "frontend/public/assets/generated/softevia-dashboard-mockup.dim_1600x1000.png",
+    "frontend/public/assets/generated/softevia-hero-illustration.dim_1400x900.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/leads/LeadCaptureDialog.tsx",
+    "frontend/src/components/leads/LeadCaptureForm.tsx",
+    "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+    "frontend/src/components/marketing/Footer.tsx",
+    "frontend/src/components/marketing/Header.tsx",
+    "frontend/src/components/marketing/HowItWorksFlow.tsx",
+    "frontend/src/components/marketing/IndustriesGrid.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useSubmitLead.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/SofteviaLandingPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

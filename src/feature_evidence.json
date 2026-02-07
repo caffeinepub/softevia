@@ -1,0 +1,128 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-modern-high-conversion-b2b-saas-landing-page-for-softevia-with-a-clean-professional-enterprise-look-using-blue-and-purple-gradient-accents-plus-ai-analytics-themed-visuals",
+      "featureTitle": "Create a single-page, modern, high-conversion B2B SaaS landing page for “Softevia” with a clean, professional enterprise look using blue and purple gradient accents, plus AI/analytics-themed visuals.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/SofteviaLandingPage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-exact-page-structure-and-section-content-specified-by-the-user-with-user-facing-text-in-english-and-with-the-h1-exactly-market-research-technology-in-europe",
+      "featureTitle": "Implement the exact page structure and section content specified by the user, with user-facing text in English and with the H1 exactly: “Market Research Technology in Europe”.",
+      "files": [
+        "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+        "frontend/src/components/marketing/HowItWorksFlow.tsx",
+        "frontend/src/components/marketing/IndustriesGrid.tsx",
+        "frontend/src/pages/SofteviaLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-conversion-focused-ctas-wire-the-request-a-demo-and-speak-with-an-expert-ctas-to-open-a-modal-or-dedicated-section-with-a-lead-capture-form-validate-inputs-and-show-a-clear-success-state-after-submission",
+      "featureTitle": "Add conversion-focused CTAs: wire the “Request a Demo” and “Speak with an Expert” CTAs to open a modal (or dedicated section) with a lead capture form, validate inputs, and show a clear success state after submission.",
+      "files": [
+        "frontend/src/components/leads/LeadCaptureDialog.tsx",
+        "frontend/src/components/leads/LeadCaptureForm.tsx",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useSubmitLead.ts",
+        "frontend/src/pages/SofteviaLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-optimize-the-landing-page-for-on-page-seo-targeting-the-exact-keyword-market-research-technology-in-europe-by-adding-appropriate-document-title-meta-description-and-visible-keyword-usage-across-headings-body-while-keeping-language-natural-also-include-the-provided-related-keywords-across-the-page-content",
+      "featureTitle": "Optimize the landing page for on-page SEO targeting the exact keyword “Market Research Technology in Europe” by adding appropriate document title, meta description, and visible keyword usage across headings/body while keeping language natural; also include the provided related keywords across the page content.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/pages/SofteviaLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-polished-navigation-header-and-footer-suitable-for-a-b2b-saas-landing-page-with-smooth-scroll-to-sections-and-persistent-access-to-primary-cta-s",
+      "featureTitle": "Add a polished navigation/header and footer suitable for a B2B SaaS landing page, with smooth scroll to sections and persistent access to primary CTA(s).",
+      "files": [
+        "frontend/src/components/marketing/Footer.tsx",
+        "frontend/src/components/marketing/Header.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/SofteviaLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-and-render-required-static-image-assets-illustrations-and-dashboard-mockups-under-frontend-public-assets-generated-and-integrate-them-into-relevant-sections-hero-and-or-how-it-works-solutions-with-proper-alt-text",
+      "featureTitle": "Add and render required static image assets (illustrations and dashboard mockups) under frontend/public/assets/generated and integrate them into relevant sections (Hero and/or How it Works / Solutions) with proper alt text.",
+      "files": [
+        "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+        "frontend/src/pages/SofteviaLandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "kind": "build_request",
+  "title": "Softevia B2B SaaS landing page targeting “Market Research Technology in Europe”",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page, modern, high-conversion B2B SaaS landing page for “Softevia” with a clean, professional enterprise look using blue and purple gradient accents, plus AI/analytics-themed visuals.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a modern, high-conversion B2B SaaS landing page for Softevia, a Market Research Technology Company.",
+          "🎨 Design Style\n\nClean, modern SaaS layout\n\nAI and analytics-themed illustrations\n\nDashboard UI mockups\n\nBlue and purple gradient accents\n\nProfessional enterprise look"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page renders as a cohesive, responsive layout for mobile/tablet/desktop.",
+        "Visual styling consistently uses clean SaaS spacing/typography and blue/purple gradient accents (no conflicting themes).",
+        "Page includes at least one AI/analytics illustration and at least one dashboard UI mockup integrated into the layout (not just empty placeholders)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the exact page structure and section content specified by the user, with user-facing text in English and with the H1 exactly: “Market Research Technology in Europe”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "🧱 Page Structure & Content\n\nHero Section\nH1: Market Research Technology in Europe\nSubheading: AI-Powered Market Research Technology for Smarter Decisions\n\nShort paragraph explaining that Softevia delivers AI market research and predictive analytics solutions...",
+          "Section 2 – The Evolution of Market Research Technology in Europe",
+          "Section 3 – About Softevia",
+          "Section 4 – Solutions / Capabilities Grid\n\nCreate 6 feature blocks: ...",
+          "Section 5 – Why Choose Softevia ...",
+          "Section 6 – Industries Served in Europe ...",
+          "Section 7 – How the Technology Works ...",
+          "Final CTA Section ..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Sections appear in this order: Hero, Evolution, About, Solutions/Capabilities (6 blocks), Why Choose (icon bullets), Industries (grid), How the Technology Works (step-by-step flow), Final CTA.",
+        "Hero section includes H1 exactly “Market Research Technology in Europe”, the specified subheading, and a short paragraph describing Softevia as an AI market research + predictive analytics technology provider using a digital market intelligence platform.",
+        "Solutions/Capabilities grid contains exactly 6 feature blocks with the provided titles and short technology-focused descriptions.",
+        "Why Choose section uses icon-style bullets and contains exactly the five points provided.",
+        "Industries section displays the 6 industries in a grid format with the exact labels provided.",
+        "How the Technology Works shows the 5 steps in a clear step-by-step visual flow with the exact step titles provided.",
+        "Final CTA includes a strong closing message aligned to the stated objective and presents both CTAs: “Request a Demo” (primary) and “Speak with an Expert” (secondary)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add conversion-focused CTAs: wire the “Request a Demo” and “Speak with an Expert” CTAs to open a modal (or dedicated section) with a lead capture form, validate inputs, and show a clear success state after submission.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "CTA Button: Request a Demo",
+          "Primary CTA: Request a Demo\nSecondary CTA: Speak with an Expert"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking any “Request a Demo” CTA opens the same demo-request form experience.",
+        "Clicking “Speak with an Expert” opens the same form with the intent preselected as “Speak with an Expert” (or equivalent), without duplicating the entire UI.",
+        "Form includes at minimum: full name, work email, company, optional message, and an intent selector (Demo vs Expert).",
+        "Client-side validation prevents submission with missing required fields or invalid email format; validation messages are shown inline.",
+        "On successful submission, UI shows a non-technical confirmation message and clears/disables the form to prevent accidental resubmits.",
+        "No third-party email or CRM integrations are added; submissions are stored in the canister backend."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement backend lead storage in the single Motoko actor: store lead submissions (timestamp, intent, name, email, company, message) and expose a method for the frontend to submit leads.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "CTA Button: Request a Demo",
+          "Secondary CTA: Speak with an Expert"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend provides an update call to create/store a lead submission with the required fields and server-side timestamp.",
+        "Backend stores submissions in stable memory-compatible state so they persist across canister upgrades (use appropriate stable structures/patterns).",
+        "Backend performs basic input sanity checks (e.g., non-empty required strings; reasonable max lengths) and rejects invalid payloads.",
+        "Frontend uses the backend method to submit the lead (no mock-only flow)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Optimize the landing page for on-page SEO targeting the exact keyword “Market Research Technology in Europe” by adding appropriate document title, meta description, and visible keyword usage across headings/body while keeping language natural; also include the provided related keywords across the page content.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "This page must target the SEO keyword:\n“Market Research Technology in Europe”",
+          "🔑 SEO Keywords to Naturally Include\n\nMarket Research Technology in Europe\nAI market research\npredictive analytics company\nbusiness intelligence solutions\ndata-driven market research\nAI-powered business insights\ncustomer insights analytics\ncompetitor benchmarking services\nmarket intelligence services\ndigital market intelligence platform"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The H1 is exactly “Market Research Technology in Europe”.",
+        "Page sets an SEO-friendly document title and meta description that include “Market Research Technology in Europe”.",
+        "All provided SEO keywords are included naturally at least once in visible page copy (not in hidden text).",
+        "Copy consistently positions Softevia as a technology provider (AI/automation/analytics) and explicitly not a traditional survey-based research agency."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a polished navigation/header and footer suitable for a B2B SaaS landing page, with smooth scroll to sections and persistent access to primary CTA(s).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a modern, high-conversion B2B SaaS landing page for Softevia...",
+          "CTA Button: Request a Demo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header includes Softevia wordmark (text-based is acceptable if no logo yet) and nav links that scroll to key sections (e.g., Solutions, Industries, How it Works).",
+        "Primary CTA is visible in the header on desktop (and accessible on mobile via a menu or sticky CTA).",
+        "Footer includes basic company/footer layout (e.g., brief positioning statement and links that scroll to sections)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add and render required static image assets (illustrations and dashboard mockups) under frontend/public/assets/generated and integrate them into relevant sections (Hero and/or How it Works / Solutions) with proper alt text.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "AI and analytics-themed illustrations",
+          "Dashboard UI mockups"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All generated images are stored as static assets under frontend/public/assets/generated and referenced directly by the frontend (not served from the backend).",
+        "At least one illustration and one dashboard mockup are displayed in the page layout, responsive and not distorted.",
+        "All images include descriptive alt text appropriate for accessibility and SEO."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (compose them instead).",
+    "Do not edit the immutable Internet Identity/actor hooks and main entry files listed in the system context; integrate features via new components/pages and existing composition points.",
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Do not add third-party authentication providers, email services, CRM integrations, or external databases."
+  ],
+  "nonGoals": [
+    "Building a multi-page marketing site with blog/resources pages.",
+    "Implementing real-time chat, notifications, or any WebSocket-based features.",
+    "Integrating external analytics, heatmaps, or ad pixels.",
+    "Implementing an admin CRM UI for viewing/exporting captured leads (unless explicitly requested later)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Abstract AI analytics illustration with European motif (softevia-hero-illustration.dim_1400x900.png)",
+      "SaaS dashboard UI mockup showing charts, KPIs, and filters (softevia-dashboard-mockup.dim_1600x1000.png)",
+      "Set of 6 minimal line icons for capabilities (insights, customers, benchmarking, predictive, BI, platform) in a consistent style (softevia-capability-icons.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

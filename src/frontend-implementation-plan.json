@@ -1,0 +1,206 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Softevia B2B SaaS landing page (Market Research Technology in Europe)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page, modern, high-conversion Softevia landing page with an enterprise look, blue/purple gradient accents, and AI/analytics-themed visuals.",
+      "acceptanceCriteria": [
+        "Landing page renders as a cohesive, responsive layout for mobile/tablet/desktop.",
+        "Visual styling consistently uses clean SaaS spacing/typography and blue/purple gradient accents (no conflicting themes).",
+        "Page includes at least one AI/analytics illustration and at least one dashboard UI mockup integrated into the layout (not just empty placeholders)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SofteviaLandingPage.tsx",
+          "operation": "create",
+          "description": "Create the single-page landing layout and sections composition with a clean enterprise SaaS look and blue/purple gradient accents; integrate AI/analytics visual areas (illustration + dashboard mockup)."
+        },
+        {
+          "path": "frontend/src/components/marketing/Section.tsx",
+          "operation": "create",
+          "description": "Add reusable section wrapper and spacing primitives to keep consistent typography, layout rhythm, and responsive behavior across the landing page."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend theme tokens (colors/gradients/shadows) to support the blue/purple gradient accent system and enterprise styling consistency."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global base styles for a clean SaaS look (typography defaults, background/foreground, smooth scroll, and consistent section spacing) without introducing conflicting themes."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Wire the Softevia single-page landing into the app root so it is rendered as the primary experience."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement the exact required page structure and section content with the H1 exactly “Market Research Technology in Europe”.",
+      "acceptanceCriteria": [
+        "Sections appear in this order: Hero, Evolution, About, Solutions/Capabilities (6 blocks), Why Choose (icon bullets), Industries (grid), How the Technology Works (step-by-step flow), Final CTA.",
+        "Hero section includes H1 exactly “Market Research Technology in Europe”, the specified subheading, and a short paragraph describing Softevia as an AI market research + predictive analytics technology provider using a digital market intelligence platform.",
+        "Solutions/Capabilities grid contains exactly 6 feature blocks with the provided titles and short technology-focused descriptions.",
+        "Why Choose section uses icon-style bullets and contains exactly the five points provided.",
+        "Industries section displays the 6 industries in a grid format with the exact labels provided.",
+        "How the Technology Works shows the 5 steps in a clear step-by-step visual flow with the exact step titles provided.",
+        "Final CTA includes a strong closing message aligned to the stated objective and presents both CTAs: “Request a Demo” (primary) and “Speak with an Expert” (secondary)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SofteviaLandingPage.tsx",
+          "operation": "modify",
+          "description": "Implement the required section order and exact user-facing English copy, including the H1 exactly “Market Research Technology in Europe”, specified subheading, the 6 capability blocks, 5 why-choose bullets, 6 industries labels, 5 how-it-works steps, and the final CTA copy + dual CTAs."
+        },
+        {
+          "path": "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+          "operation": "create",
+          "description": "Create a dedicated 6-item capabilities grid component to ensure exactly six feature blocks with consistent layout and responsive behavior."
+        },
+        {
+          "path": "frontend/src/components/marketing/HowItWorksFlow.tsx",
+          "operation": "create",
+          "description": "Create a step-by-step visual flow component for the 5 required steps with clear progression and responsive layout."
+        },
+        {
+          "path": "frontend/src/components/marketing/IndustriesGrid.tsx",
+          "operation": "create",
+          "description": "Create an industries grid component that renders exactly the 6 specified industry labels in a responsive grid."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add conversion-focused CTAs that open a shared lead-capture modal/section with validation and a success state; submit leads via the backend submitLead method.",
+      "acceptanceCriteria": [
+        "Clicking any “Request a Demo” CTA opens the same demo-request form experience.",
+        "Clicking “Speak with an Expert” opens the same form with the intent preselected as “Speak with an Expert” (or equivalent), without duplicating the entire UI.",
+        "Form includes at minimum: full name, work email, company, optional message, and an intent selector (Demo vs Expert).",
+        "Client-side validation prevents submission with missing required fields or invalid email format; validation messages are shown inline.",
+        "On successful submission, UI shows a non-technical confirmation message and clears/disables the form to prevent accidental resubmits.",
+        "No third-party email or CRM integrations are added; submissions are stored in the canister backend."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/leads/LeadCaptureDialog.tsx",
+          "operation": "create",
+          "description": "Implement a reusable lead-capture modal using shadcn-ui Dialog to support shared UI for both CTAs with intent preselection. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/leads/LeadCaptureForm.tsx",
+          "operation": "create",
+          "description": "Create the lead form UI (intent selector, full name, work email, company, optional message), inline validation messages, submit/disabled states, and a clear success confirmation message. Use shadcn-ui form inputs (Input/Textarea/Select/Button) by composing components without editing frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitLead.ts",
+          "operation": "create",
+          "description": "Add a React hook to submit lead data by calling the existing backendInterface submitLead via the app's actor hook (useActor), and return status (idle/submitting/success/error) to drive UI."
+        },
+        {
+          "path": "frontend/src/pages/SofteviaLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire all “Request a Demo” and “Speak with an Expert” CTAs (hero + final CTA + header CTA if present) to open the same LeadCaptureDialog instance; pass intent to preselect and avoid duplicating UI."
+        },
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Ensure the actor returned is usable for anonymous visitors (no login required for lead submission) and can be consumed by the new lead submission hook without changing immutable auth behavior."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Optimize on-page SEO for the keyword “Market Research Technology in Europe” with title/meta description and natural visible keyword usage including all provided related keywords.",
+      "acceptanceCriteria": [
+        "The H1 is exactly “Market Research Technology in Europe”.",
+        "Page sets an SEO-friendly document title and meta description that include “Market Research Technology in Europe”.",
+        "All provided SEO keywords are included naturally at least once in visible page copy (not in hidden text).",
+        "Copy consistently positions Softevia as a technology provider (AI/automation/analytics) and explicitly not a traditional survey-based research agency."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Update the document title and add a meta description that includes the exact keyword “Market Research Technology in Europe” and aligns with Softevia’s AI/analytics positioning."
+        },
+        {
+          "path": "frontend/src/pages/SofteviaLandingPage.tsx",
+          "operation": "modify",
+          "description": "Ensure visible copy naturally includes all provided related keywords at least once (AI market research, predictive analytics company, business intelligence solutions, data-driven market research, AI-powered business insights, customer insights analytics, competitor benchmarking services, market intelligence services, digital market intelligence platform) and clearly positions Softevia as a technology provider (not a traditional survey-based agency)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add a polished header/navigation and footer with smooth scrolling to sections and persistent access to primary CTAs.",
+      "acceptanceCriteria": [
+        "Header includes Softevia wordmark (text-based is acceptable if no logo yet) and nav links that scroll to key sections (e.g., Solutions, Industries, How it Works).",
+        "Primary CTA is visible in the header on desktop (and accessible on mobile via a menu or sticky CTA).",
+        "Footer includes basic company/footer layout (e.g., brief positioning statement and links that scroll to sections)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/Header.tsx",
+          "operation": "create",
+          "description": "Implement a responsive header with Softevia wordmark, smooth-scroll nav links to in-page sections, and a persistent primary CTA that opens the shared lead-capture dialog. Use shadcn-ui Button and (optionally) Sheet for mobile navigation without editing frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/Footer.tsx",
+          "operation": "create",
+          "description": "Implement a B2B SaaS footer with a brief positioning statement and in-page links that smooth-scroll to key sections."
+        },
+        {
+          "path": "frontend/src/pages/SofteviaLandingPage.tsx",
+          "operation": "modify",
+          "description": "Wire the new Header and Footer into the landing page and ensure section IDs match nav links for smooth scrolling; ensure header CTA triggers the same lead-capture modal as other CTAs."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Enable smooth scrolling behavior globally and ensure anchor offsets/layout accommodate a sticky header for accurate section navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add required static images under frontend/public/assets/generated and integrate at least one illustration and one dashboard mockup with descriptive alt text.",
+      "acceptanceCriteria": [
+        "All generated images are stored as static assets under frontend/public/assets/generated and referenced directly by the frontend (not served from the backend).",
+        "At least one illustration and one dashboard mockup are displayed in the page layout, responsive and not distorted.",
+        "All images include descriptive alt text appropriate for accessibility and SEO."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/softevia-hero-illustration.dim_1400x900.png",
+          "operation": "create",
+          "description": "Add the generated static asset file to the project at the required path for the hero AI analytics illustration with a European motif."
+        },
+        {
+          "path": "frontend/public/assets/generated/softevia-dashboard-mockup.dim_1600x1000.png",
+          "operation": "create",
+          "description": "Add the generated static asset file to the project at the required path for the SaaS dashboard UI mockup."
+        },
+        {
+          "path": "frontend/public/assets/generated/softevia-capability-icons.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated static asset file to the project at the required path for the set of 6 minimal line icons for capabilities."
+        },
+        {
+          "path": "frontend/src/pages/SofteviaLandingPage.tsx",
+          "operation": "modify",
+          "description": "Reference and render the static assets frontend/public/assets/generated/softevia-hero-illustration.dim_1400x900.png and frontend/public/assets/generated/softevia-dashboard-mockup.dim_1600x1000.png in relevant sections (e.g., Hero and/or How it Works/Solutions) with responsive sizing and descriptive alt text."
+        },
+        {
+          "path": "frontend/src/components/marketing/CapabilitiesGrid.tsx",
+          "operation": "modify",
+          "description": "Integrate the capabilities icon set from frontend/public/assets/generated/softevia-capability-icons.dim_512x512.png into the 6 capability blocks in a consistent, accessible way (e.g., mapped icon treatments) with appropriate alt/labels."
+        }
+      ]
+    }
+  ]
+}
